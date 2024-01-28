@@ -63,13 +63,13 @@ define gui.interface_text_color = '#ffffff'
 ## フォントとフォントサイズ ################################################################
 
 ## ゲーム内の台詞や選択肢に使われるフォント。
-define gui.text_font = "SourceHanSansLite.ttf"
+define gui.text_font = "fonts/PixelMplus12-Regular.ttf"
 
 ## キャラクターの名前に使われるフォント。
-define gui.name_text_font = "SourceHanSansLite.ttf"
+define gui.name_text_font = "fonts/PixelMplus12-Regular.ttf"
 
 ## ゲームメニューなどのインターフェースに使われるテキストのフォント。
-define gui.interface_text_font = "SourceHanSansLite.ttf"
+define gui.interface_text_font = "fonts/PixelMplus12-Regular.ttf"
 
 ## 一般的な台詞のテキストサイズ。
 define gui.text_size = 33
@@ -87,7 +87,7 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## ゲームタイトルのテキストサイズ。
-define gui.title_text_size = 75
+define gui.title_text_size = 100
 
 
 ## メインメニューとゲームメニュー #############################################################

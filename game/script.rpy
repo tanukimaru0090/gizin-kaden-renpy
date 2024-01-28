@@ -32,15 +32,17 @@ init 2 python:
     
 # init 5 python:
     
-# label ステートメント（文）はゲームの処理をまとめてラベル付けします。
-# ラベル間の移動は jump ステートメントか call ステートメントを使います。
 
+label start_fade_out:
+    with Dissolve(3.5)
+    pause 0.5
+    return
 # プロローグ
 label prologue:
     # test 色々
     # $m(dot_mozi("おはよう"))
     #with vpunch
-    $m(font_mozi("fonts/PixelMplus12-Regular.ttf","あははは"))
+    # $m(font_mozi("fonts/PixelMplus12-Regular.ttf","あははは"))
 
     # 冒頭 
     # ここでは背景を真っ暗のまま
@@ -399,6 +401,7 @@ label chapter6:
 
 # ゲームは start ラベルからスタートします。
 label start:
+    call start_fade_out
     call prologue
     call chapter1
     call chapter2
