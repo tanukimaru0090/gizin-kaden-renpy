@@ -14,28 +14,49 @@
 #define e = Character('Eileen', color="#c8ffc8")
 
 # 最初はすべてのキャラクターの名前は不明のため、???とする。
-
-init python:
+# ただし、主人公は最初の時点で名前は判明していることとする。
+# キャラクターの掛け合い時な}どにはキャラクターの名前とセリフを入れるが、地の文などは名前なしにする。
+init 1 python:
     # 主人公(男) 名前:物部重人
-    m = Character(name="???",color="#0000FF")
+    m = Character(name="{font=fonts/PixelMplus12-Regular.ttf}物部重人{/font}",color="#0000FF")
     # スマホ(女) 名前:ジェナ
-    g = Character(name="???",color="#FFFFFF")
+    g = Character(name="???",color="#FFFFFF",image="eileen")
     # ヤンキー(男) 名前:電子レンジ
     r = Character(name="???",color="#FF0000")
     
-        
-        
-
+# init 2 python:
+            
+# init 3 python:
+    
+# init 4 python:  
+    
+# init 5 python:
+    
 # label ステートメント（文）はゲームの処理をまとめてラベル付けします。
 # ラベル間の移動は jump ステートメントか call ステートメントを使います。
 
 
 label prologue:
+    # 冒頭
+    m "{font=fonts/PixelMplus12-Regular.ttf}休みの早朝、目が覚めたら家にある電化製品が無くなっていた。四畳半の一室に圧迫されていた冷蔵庫も洗濯機も、何もかもが綺麗に無くなっていた。{/font}"
+    
+    m "男子高校生の一人暮らしにしては殺風景が過ぎる。"
+    m "存在するのはただ一つ、というより目の前の一人。"
+    # ジェナが正面に座っているスチルを表示
+    
+    m "銀髪ロングの美少女である。"
+    m "あまりにも現実感のない描写が、俺の視界に映り込んでいる。彼女は凛とした佇まいで、俺を瞬きもせずじっと見つめている。無表情だから軽く怖い。"
+    m "しかしなるほど把握した。これは夢だ。夢でしかない。夢以外に何があるのだ。そう思考した俺は、彼女とは別方向に倒れ込み二度寝を試みた。"
+    # ここで横になるときの効果音
+    
+    g "「おや。またおやすみになるのですか『マスター』」"
+
+
+
     return    
 
 
 
 # ゲームは start ラベルからスタートします。
 label start:
-    scene bg room
     call prologue
