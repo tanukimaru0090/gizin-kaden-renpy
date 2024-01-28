@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 message = ARGV[0]
 branch = ARGV[1]
 
