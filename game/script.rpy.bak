@@ -11,6 +11,11 @@ init 1 python:
         return "{font=fonts/PixelMplus12-Regular.ttf}"+text+"{/font}"
     def font_mozi(font_path,text):
         return "{font={}}".format(font_path)+text+"{/font}"
+     # 一文字ずつ表示する関数
+    def show_text_slowly(text, delay=0.1):
+        for char in text:
+            renpy.say(char)
+            renpy.pause(delay)
 init 2 python:
     # キャラクター定義
     # 基本的にどのキャラクターの名前も不明だが、主人公は例外とする。
@@ -44,6 +49,9 @@ label prologue:
     #with vpunch
     # $m(font_mozi("fonts/PixelMplus12-Regular.ttf","あははは"))
     
+    # $show_text_slowly(dot_mozi("あいうろ。いいね"))
+
+
     # 冒頭 
     # ここでは背景を真っ暗のまま
     
@@ -56,8 +64,6 @@ label prologue:
     $m(dot_mozi("存在するのはただ一つ、というより目の前の一人。"))
     
     # ジェナが正面に座っているスチルを表示
-    scene bg room
-
     $m(dot_mozi("{size=+20}銀髪ロングの美少女である。{/size}"))
     
     $m(dot_mozi("あまりにも現実感のない描写が、俺の視界に映り込んでいる。"))
@@ -366,8 +372,7 @@ label prologue:
  
     $g(dot_mozi("「八尺様になる意味が分かりませんが、かしこまりました」"))
 
-    $m_z(dot_mozi("とりあえずめちゃくちゃ素直で、めちゃくちゃ俺のことを肯定してくれる子ということは理解できた。"))
-    $m_z(dot_mozi("憧れていたシチュエーションではあるし大体の男なら考えることだろうが、まさか現実になるとは思いもしないだろう。想像していた以上に困るし、彼女の目的が分からないし無表情だし怖い。とにかく次だ次。"))
+    $m_z(dot_mozi("とりあえずめちゃくちゃ素直で、めちゃくちゃ俺のことを肯定してくれる子ということは理解できた。憧れていたシチュエーションではあるし大体の男なら考えることだろうが、まさか現実になるとは思いもしないだろう。想像していた以上に困るし、彼女の目的が分からないし無表情だし怖い。とにかく次だ次。"))
 
     $m(dot_mozi("「そもそも何で俺を慕ってくれるの？　何もしてないのに……」"))
  
@@ -407,11 +412,11 @@ label chapter6:
 
 # ゲームは start ラベルからスタートします。
 label start:
-    call start_fade_out from _call_start_fade_out
-    call prologue from _call_prologue
-    call chapter1 from _call_chapter1
-    call chapter2 from _call_chapter2
-    call chapter3 from _call_chapter3
-    call chapter4 from _call_chapter4
-    call chapter5 from _call_chapter5
-    call chapter6 from _call_chapter6
+    call start_fade_out
+    call prologue
+    call chapter1
+    call chapter2
+    call chapter3
+    call chapter4
+    call chapter5
+    call chapter6

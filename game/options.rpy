@@ -13,7 +13,7 @@
 ##
 ## _() で囲まれた文字列は翻訳時に生成されるファイルに記載されます。
 
-define config.name = _("gizin_kaden")
+define config.name = _("擬人家電")
 
 
 ## 上で定義したタイトルをメインメニュースクリーン（ゲーム起動後、最初に表示され
@@ -123,13 +123,13 @@ define config.window_hide_transition = Dissolve(.2)
 ## デフォルトの文字表示速度。数字は一秒に表示する文字数で、デフォルト値の 0 は無
 ## 限（一瞬で表示）を意味します。
 
-default preferences.text_cps = 0
+default preferences.text_cps = 35
 
 
 ## デフォルトのオート待ち時間。0 から 30 までの数字を取り、数字が大きいほど待ち
 ## 時間が長くなります。
 
-default preferences.afm_time = 15
+default preferences.afm_time = 20
 
 
 ## セーブディレクトリー ##################################################################
