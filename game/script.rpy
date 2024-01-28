@@ -49,7 +49,7 @@ label prologue:
     #with vpunch
     # $m(font_mozi("fonts/PixelMplus12-Regular.ttf","あははは"))
     
-    $show_text_slowly(dot_mozi("あいうろ。いいね"))
+    # $show_text_slowly(dot_mozi("あいうろ。いいね"))
 
 
     # 冒頭 
