@@ -9,8 +9,8 @@ init 1 python:
     # ドットフォントで文字をフォーマットして返す
     def dot_mozi(text):
         return "{font=fonts/PixelMplus12-Regular.ttf}"+text+"{/font}"
-    def font_mozi(font_name,text):
-        return "{font={}}".format(font_name)+text+"{/font}"
+    def font_mozi(font_path,text):
+        return "{font={}}".format(font_path)+text+"{/font}"
 init 2 python:
     # キャラクター定義
     # 基本的にどのキャラクターの名前も不明だが、主人公は例外とする。
@@ -40,6 +40,8 @@ label prologue:
     # test 色々
     # $m(dot_mozi("おはよう"))
     #with vpunch
+    $m(font_mozi("fonts/PixelMplus12-Regular.ttf","あははは"))
+
     # 冒頭 
     # ここでは背景を真っ暗のまま
     
