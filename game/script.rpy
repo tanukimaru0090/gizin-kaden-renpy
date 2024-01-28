@@ -11,6 +11,11 @@ init 1 python:
         return "{font=fonts/PixelMplus12-Regular.ttf}"+text+"{/font}"
     def font_mozi(font_path,text):
         return "{font={}}".format(font_path)+text+"{/font}"
+     # 一文字ずつ表示する関数
+    def show_text_slowly(text, delay=0.1):
+        for char in text:
+            renpy.say(char)
+            renpy.pause(delay)
 init 2 python:
     # キャラクター定義
     # 基本的にどのキャラクターの名前も不明だが、主人公は例外とする。
@@ -43,6 +48,9 @@ label prologue:
     # $m(dot_mozi("おはよう"))
     #with vpunch
     # $m(font_mozi("fonts/PixelMplus12-Regular.ttf","あははは"))
+    
+    $show_text_slowly(dot_mozi("あいうろ。いいね"))
+
 
     # 冒頭 
     # ここでは背景を真っ暗のまま
@@ -153,10 +161,13 @@ label prologue:
     $m(dot_mozi("「いや、スマートフォンがなくて」"))
 
     $g(dot_mozi("「ですから、目の前の当機がそうです」"))
+    
     # ここで名前をジェナの名前を一時的にスマホに変更
-    $g.name = dot_mozi("スマホ?")
+    $g.name = dot_mozi("スマホ")
+
     # ここですこし待機
-    pause 2.0
+    pause 1.5
+    
     $m(dot_mozi("「え？」"))
     
     $g(dot_mozi("「？」"))
