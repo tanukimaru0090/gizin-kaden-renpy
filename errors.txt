@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 52: invalid syntax
-    m(dot_mozi("休みの早朝、目が覚めたら家にある電化製品が無くなっていた。四畳半の一室に圧迫されていた冷蔵庫も洗濯機も、何もかもが綺麗に無くなっていた。"))slow
-                                                                                        ^
+File "game/script.rpy", line 418: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    $g(dot_mozi("「それって、いつからなの？」"))
+    ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Mon Jan 29 07:19:46 2024
+Mon Jan 29 08:24:05 2024
