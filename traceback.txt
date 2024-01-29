@@ -1,25 +1,35 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 7, in script call
-    call start_fade_out from _call_start_fade_out
-  File "game/start.rpy", line 2, in script
-    with Dissolve(3.5)
-OSError: Couldn't find file 'audio/click'.
+  File "game/script.rpy", line 8, in script call
+    call prologue from _call_prologue
+  File "game/prologue.rpy", line 102, in script
+    $g(dot_mozi("「当機は貴方のスマートフォンです。モノノベシゲト様」"))
+  File "game/prologue.rpy", line 102, in <module>
+    $g(dot_mozi("「当機は貴方のスマートフォンです。モノノベシゲト様」"))
+OSError: Couldn't find file 'game/audio/bg1.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 7, in script call
-    call start_fade_out from _call_start_fade_out
-  File "game/start.rpy", line 2, in script
-    with Dissolve(3.5)
-  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\ast.py", line 1678, in execute
-    renpy.exports.with_statement(trans, paired=paired)
-  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\exports.py", line 1758, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\display\core.py", line 2978, in do_with
-    return self.interact(trans_pause=True,
+  File "game/script.rpy", line 8, in script call
+    call prologue from _call_prologue
+  File "game/prologue.rpy", line 102, in script
+    $g(dot_mozi("「当機は貴方のスマートフォンです。モノノベシゲト様」"))
+  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/prologue.rpy", line 102, in <module>
+    $g(dot_mozi("「当機は貴方のスマートフォンです。モノノベシゲト様」"))
+  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\character.py", line 1003, in do_display
+    display_say(who,
+  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\display\core.py", line 3582, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
   File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\display\core.py", line 4379, in interact_core
@@ -37,9 +47,9 @@ Full traceback:
     rv = renpy.loader.load(fn, directory="audio")
   File "C:\Users\daruma\use-bin\renpy\renpy-8.1.3-sdk\renpy\loader.py", line 833, in load
     raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'audio/click'.
+OSError: Couldn't find file 'game/audio/bg1.ogg'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.3.23091805
 擬人家電 1.0
-Mon Jan 29 12:02:27 2024
+Mon Jan 29 14:34:08 2024
