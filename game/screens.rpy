@@ -252,14 +252,14 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("ロールバック") action Rollback()
-            textbutton _("ヒストリー") action ShowMenu('history')
-            textbutton _("スキップ") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("オート") action Preference("auto-forward", "toggle")
-            textbutton _("セーブ") action ShowMenu('save')
-            textbutton _("Q.セーブ") action QuickSave()
-            textbutton _("Q.ロード") action QuickLoad()
-            textbutton _("設定") action ShowMenu('preferences')
+            textbutton _("ろーるばっく") action Rollback()
+            textbutton _("ばっくろぐ") action ShowMenu('history')
+            textbutton _("すきっぷ") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("おーと") action Preference("auto-forward", "toggle")
+            textbutton _("せーぶ") action ShowMenu('save')
+            textbutton _("Q.せーぶ") action QuickSave()
+            textbutton _("Q.ろーど") action QuickLoad()
+            textbutton _("せってい") action ShowMenu('preferences')
 
 
 ## 次のコードは、プレイヤーが明示的にインターフェースを隠さない限り quick_menu
@@ -300,38 +300,38 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("スタート") action Start()
+            textbutton _("すたーと") action Start()
 
         else:
 
-            textbutton _("ヒストリー") action ShowMenu("history")
+            textbutton _("ばっくろぐ") action ShowMenu("history")
 
-            textbutton _("セーブ") action ShowMenu("save")
+            textbutton _("せーぶ") action ShowMenu("save")
 
-        textbutton _("ロード") action ShowMenu("load")
+        textbutton _("ろーど") action ShowMenu("load")
 
-        textbutton _("環境設定") action ShowMenu("preferences")
+        textbutton _("かんきょう設定") action ShowMenu("preferences")
 
         if _in_replay:
 
-            textbutton _("リプレイ終了") action EndReplay(confirm=True)
+            textbutton _("りぷれいしゅうりょう") action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton _("メインメニュー") action MainMenu()
+            textbutton _("めいんめにゅー") action MainMenu()
 
-        textbutton _("バージョン情報") action ShowMenu("about")
+        textbutton _("ばーじょん情報") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## モバイルデバイスにはヘルプは不要であるか不適切です。
-            textbutton _("ヘルプ") action ShowMenu("help")
+            textbutton _("へるぷ") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## 終了ボタンはiOSでは使用できません。また、AndroidやWebでは必要あり
             ## ません。
-            textbutton _("終了") action Quit(confirm=not main_menu)
+            textbutton _("おわる") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -372,7 +372,7 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
-            style "main_menu_vbox"
+            style "main_menu_hbox"
 
             text "[config.name!t]":
                 style "main_menu_title"
@@ -390,13 +390,11 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
     background "gui/overlay/main_menu.png"
-
+   
 style main_menu_vbox:
     xalign 1.0
     xoffset -30
-    xmaximum 1200
     yalign 1.0
     yoffset -30
 
@@ -476,7 +474,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("戻る"):
+    textbutton _("もどる"):
         style "return_button"
 
         action Return()
@@ -554,14 +552,14 @@ screen about():
     ## 次の use ステートメントは game_menu（ゲームメニュー）スクリーンをこのスク
     ## リーンの内に表示しています。use 文の子（内包されたオブジェクト）の vbox
     ## は game_menu スクリーンの中の viewport に配置されます。
-    use game_menu(_("バージョン情報"), scroll="viewport"):
+    use game_menu(_("ばーじょん情報"), scroll="viewport"):
 
         style_prefix "about"
 
         vbox:
 
             label "[config.name!t]"
-            text _("バージョン [config.version!t]\n")
+            text _("version [config.version!t]\n")
 
             ## gui.about は、通常 options.rpy で設定します。
             if gui.about:
@@ -591,14 +589,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("セーブ"))
+    use file_slots(_("せーぶ"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("ロード"))
+    use file_slots(_("ろーど"))
 
 
 screen file_slots(title):
@@ -682,11 +680,11 @@ screen file_slots(title):
 
                 if config.has_sync:
                     if CurrentScreenName() == "save":
-                        textbutton _("同期のアップロード"):
+                        textbutton _("同期のあっぷろーど"):
                             action UploadSync()
                             xalign 0.5
                     else:
-                        textbutton _("同期のダウンロード"):
+                        textbutton _("同期のだうんろーど"):
                             action DownloadSync()
                             xalign 0.5
 
@@ -734,7 +732,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("環境設定"), scroll="viewport"):
+    use game_menu(_("かんきょう設定"), scroll="viewport"):
 
         vbox:
 
@@ -899,7 +897,7 @@ screen history():
     ## にしています。
     predict False
 
-    use game_menu(_("ヒストリー"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(_("ばっくろぐ"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -986,7 +984,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("ヘルプ"), scroll="viewport"):
+    use game_menu(_("へるぷ"), scroll="viewport"):
 
         style_prefix "help"
 
@@ -1222,7 +1220,7 @@ screen skip_indicator():
         hbox:
             spacing 9
 
-            text _("スキップ中")
+            text _("すきっぷ中")
 
             text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
             text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"

@@ -28,11 +28,11 @@ define config.check_conflicting_properties = True
 
 ## アクセントカラー。タイトル・ラベル・ハイライトされたテキスト・ボタンの背景・
 ## スライダーのつまみ等、インターフェイスの様々な場所で使います。
-define gui.accent_color = '#9933ff'
+define gui.accent_color = '#FFFFFF'
 
 ## selected（選択中）でも hover（フォーカス中）でもない状態のテキストボタンのカ
 ## ラー。
-define gui.idle_color = '#888888'
+define gui.idle_color = '#C8C8C8'
 
 ## スモールカラー。クイックメニューなどの、明るさを調節する必要のある小さなテキ
 ## ストボタンに使います。
@@ -87,7 +87,7 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## ゲームタイトルのテキストサイズ。
-define gui.title_text_size = 100
+define gui.title_text_size = 90
 
 
 ## メインメニューとゲームメニュー #############################################################
