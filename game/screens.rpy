@@ -359,8 +359,8 @@ screen main_menu():
     ## ーンを置換します。
     tag menu
 
-    add gui.main_menu_background
-
+    # add gui.main_menu_background
+    add gui.main_menu_background xalign 0.5 yalign 1
     ## 次の空のフレームは gui/overlay/main_menu.png を表示してメインメニューを暗
     ## くしています。
     frame:
